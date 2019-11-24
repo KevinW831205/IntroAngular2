@@ -7,21 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseComponent implements OnInit {
 
- isActive = true;
+  isActive = true;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSave($event){
+  onSave($event) {
     $event.stopPropagation();
     console.log("button clicked")
     console.log($event);
   }
 
-  onDivClick(){
+  onDivClick() {
     console.log("div clicked")
+  }
+
+  onKeyUp() {
+    console.log('Enter is pressed')
   }
 
 }

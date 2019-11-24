@@ -1,7 +1,13 @@
 <div (click)="onDivClick()">
 
     <p>course works!</p>
+
+    <input (keyup.enter)="onKeyUp()"/>
+    
     <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive?'blue':'white'"
         (click)="onSave($event)">Save</button>
+
+
+    
 
 </div>
