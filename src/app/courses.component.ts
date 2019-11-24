@@ -10,15 +10,13 @@ import { Component } from '@angular/core';
                     {{ course }}
                 </li>
             </ul>
-    
-    
-    
     `,
 
 })
 export class CoursesComponent {
     title = "List of Courses";
-    courses = ["c1", "c2", "c3"];
+    courses;
+
 
     getTitle() {
         return this.title
