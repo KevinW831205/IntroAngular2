@@ -14,6 +14,8 @@ export class CourseComponent implements OnInit {
     releaseDate: new Date(2016,3,1)
   }
 
+  text = "asdfkljflasdslkjfljfkalsdjkla asdfkljflasdslkjfljfkalsdjkla asdfkljflasdslkjfljfkalsdjkla asdfkljflasdslkjfljfkalsdjkla asdfkljflasdslkjfljfkalsdjkl asdfkljflasdslkjfljfkalsdjkla asdfkljflasdslkjfljfkalsdjkla asdfkljflasdslkjfljfkalsdjkla"
+
   isActive = true;
 
   input1 = "00";
