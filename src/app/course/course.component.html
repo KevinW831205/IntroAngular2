@@ -1,2 +1,7 @@
-<p>course works!</p>
-<button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive?'blue':'white'" >Save</button>
+<div (click)="onDivClick()">
+
+    <p>course works!</p>
+    <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive?'blue':'white'"
+        (click)="onSave($event)">Save</button>
+
+</div>
