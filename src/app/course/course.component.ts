@@ -9,6 +9,8 @@ export class CourseComponent implements OnInit {
 
   isActive = true;
 
+  input1 = "00";
+
   constructor() { }
 
   ngOnInit() {
@@ -24,9 +26,8 @@ export class CourseComponent implements OnInit {
     console.log("div clicked")
   }
 
-  onKeyUp(input1) {
-    console.log('Enter is pressed');
-    console.log(input1);
+  onKeyUp() {
+    console.log(this.input1);
   }
 
 }

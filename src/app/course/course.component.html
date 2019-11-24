@@ -2,12 +2,11 @@
 
     <p>course works!</p>
 
-    <input #input1 (keyup.enter)="onKeyUp(input1.value)"/>
+    <!-- <input [value]=input1 (keyup.enter)="input1 = $event.target.value; onKeyUp();" /> -->
+    <input [(ngModel)]="input1" (keyup.enter)="onKeyUp()" />
 
     <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive?'blue':'white'"
         (click)="onSave($event)">Save</button>
 
-
-    
 
 </div>
