@@ -10,3 +10,12 @@
 
 
 </div>
+
+<div>
+    {{course.title | uppercase | lowercase}}<br />
+    {{course.students | number }}<br />
+    {{course.rating | number:'1.2-2' }}<br />
+    {{course.price | currency:'CNY':true:'3.2-2' }}<br />
+    {{course.releaseDate | date:'short'}}
+
+</div>
