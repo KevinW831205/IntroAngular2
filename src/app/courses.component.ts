@@ -11,15 +11,24 @@ import { CoursesService } from './courses.service';
                     {{ course }}
                 </li>
             </ul>
+            // String interpolation
+            <img src="{{imageUrl}}"/> 
+            <br>
+            // property binding
+            <img [src]="imageUrl" />
+
+
     `,
 
 })
 export class CoursesComponent {
     title = "List of Courses";
     courses;
+    imageUrl = "http://lorempixel.com/400/200";
 
 
     constructor(service: CoursesService){
+        
         this.courses = service.getCourses();
     }
 
