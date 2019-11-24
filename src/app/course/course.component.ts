@@ -24,8 +24,9 @@ export class CourseComponent implements OnInit {
     console.log("div clicked")
   }
 
-  onKeyUp() {
-    console.log('Enter is pressed')
+  onKeyUp(input1) {
+    console.log('Enter is pressed');
+    console.log(input1);
   }
 
 }

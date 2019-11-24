@@ -2,8 +2,8 @@
 
     <p>course works!</p>
 
-    <input (keyup.enter)="onKeyUp()"/>
-    
+    <input #input1 (keyup.enter)="onKeyUp(input1.value)"/>
+
     <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive?'blue':'white'"
         (click)="onSave($event)">Save</button>
 
