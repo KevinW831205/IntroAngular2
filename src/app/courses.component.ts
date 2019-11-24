@@ -11,13 +11,17 @@ import { CoursesService } from './courses.service';
                     {{ course }}
                 </li>
             </ul>
-            // String interpolation
+            <!-- String interpolation -->
             <img src="{{imageUrl}}"/> 
             <br>
-            // property binding
+            <!-- property binding -->
             <img [src]="imageUrl" />
 
-
+            <table>
+                <tr>
+                    <td [attr.colspan]="colspan">123 </td>
+                </tr>
+            </table>
     `,
 
 })
@@ -25,6 +29,7 @@ export class CoursesComponent {
     title = "List of Courses";
     courses;
     imageUrl = "http://lorempixel.com/400/200";
+    colspan = 2;
 
 
     constructor(service: CoursesService){
