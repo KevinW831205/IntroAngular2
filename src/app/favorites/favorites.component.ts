@@ -13,7 +13,8 @@ import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 export class FavoritesComponent implements OnInit {
   fasStar = fasStar;
   farStar = farStar;
-  @Input() isFavorite;
+  @Input('is-fav') isFavorite: boolean;
+  @Input() isColored: boolean;
 
 
 
