@@ -13,6 +13,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InputTitleComponent } from './input-title/input-title.component';
 import { TitleCasePipe } from './title-case.pipe';
+import { TestgroundComponent } from './testground/testground.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { TitleCasePipe } from './title-case.pipe';
     FavoritesComponent,
     InputTitleComponent,
     TitleCasePipe,
+    TestgroundComponent,
   ],
   imports: [
     BrowserModule,
