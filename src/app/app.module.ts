@@ -9,18 +9,22 @@ import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
 import { from } from 'rxjs';
 import { SummaryPipe } from './summary.pipe';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
     CourseComponent,
-    SummaryPipe
+    SummaryPipe,
+    FavoritesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [
     CoursesService
