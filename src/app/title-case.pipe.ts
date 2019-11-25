@@ -12,17 +12,26 @@ export class TitleCasePipe implements PipeTransform {
       return null;
     } else {
       let words = value.split(" ");
-      let preposition = ['a','of','the','an','and'];
 
       for (var i = 0; i < words.length; i++) {
-        if( preposition.includes(words[i]) && i != 0){
+        if (this.isPreposition(words[i]) && i != 0) {
           words[i] = words[i].toLowerCase();
         } else {
-          words[i] = words[i].substr(0,1).toUpperCase()  + words[i].substr(1).toLowerCase();
+          words[i] = words[i].substr(0, 1).toUpperCase() + words[i].substr(1).toLowerCase();
         }
       }
 
       return words.join(" ");
+    };
+
+  }
+
+  private isPreposition(word: string) {
+    let preposition = ['a', 'of', 'the', 'an', 'and', 'is', 'are'];
+    if (preposition.includes(word.toLowerCase())) {
+      return true;
+    } else {
+      return false;
     }
 
 
