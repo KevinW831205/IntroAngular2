@@ -11,6 +11,7 @@ import { from } from 'rxjs';
 import { SummaryPipe } from './summary.pipe';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { InputTitleComponent } from './input-title/input-title.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CourseComponent,
     SummaryPipe,
     FavoritesComponent,
+    InputTitleComponent,
   ],
   imports: [
     BrowserModule,
