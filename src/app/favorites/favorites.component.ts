@@ -14,7 +14,7 @@ export class FavoritesComponent implements OnInit {
   fasStar = fasStar;
   farStar = farStar;
   @Input('is-fav') isFavorite: boolean;
-  @Output() change = new EventEmitter();
+  @Output('change') change = new EventEmitter();
 
 
   constructor() { }
