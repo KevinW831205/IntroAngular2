@@ -9,6 +9,13 @@ import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.css'],
   // input:['isfavorite'] redundant with Input import and have refactoring issues.
+  // styles: [`
+  //   .favorite{
+  //     backgroudn-color: black;
+  //   }
+  
+  // `]
+
 })
 export class FavoritesComponent implements OnInit {
   fasStar = fasStar;
