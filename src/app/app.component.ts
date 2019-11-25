@@ -8,5 +8,10 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 })
 export class AppComponent {
   title = 'hello-world-Angular-Intro';
-  faCoffee = faCoffee;
+
+  post = {
+    title: "Title",
+    isFavorite: true
+  }
+
 }
