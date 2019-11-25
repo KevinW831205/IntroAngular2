@@ -1,1 +1,13 @@
-<p>testground works!</p>
+<div class="test-container">
+    <h1> testing area</h1>
+
+    <input [(ngModel)]="listInput" (keyup.enter)="enterList()" />
+
+    <ul>
+        <li *ngFor = "let listItem of list" >
+            {{listItem.item}}  |  created at: {{listItem.date | date}}
+
+        </li>
+    </ul>
+
+</div>
