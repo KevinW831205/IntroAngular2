@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { faCoffee, fas } from '@fortawesome/free-solid-svg-icons';
 import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
@@ -15,6 +15,7 @@ import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
   //   }
   
   // `]
+  encapsulation: ViewEncapsulation.Emulated
 
 })
 export class FavoritesComponent implements OnInit {

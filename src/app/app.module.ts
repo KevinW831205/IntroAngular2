@@ -14,6 +14,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InputTitleComponent } from './input-title/input-title.component';
 import { TitleCasePipe } from './title-case.pipe';
 import { TestgroundComponent } from './testground/testground.component';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TestgroundComponent } from './testground/testground.component';
     InputTitleComponent,
     TitleCasePipe,
     TestgroundComponent,
+    PanelComponent,
   ],
   imports: [
     BrowserModule,
