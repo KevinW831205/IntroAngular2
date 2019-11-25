@@ -2,7 +2,7 @@
 <!-- <courses></courses>
 <app-course></app-course> -->
 
-<app-favorites [is-fav] = "post.isFavorite" (change) =onFavoriteChanged() ></app-favorites>
+<app-favorites [is-fav] = "post.isFavorite" (change) =onFavoriteChanged($event) ></app-favorites>
 
 <app-input-title></app-input-title>
 
