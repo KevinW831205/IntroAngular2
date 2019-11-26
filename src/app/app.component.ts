@@ -14,7 +14,11 @@ export class AppComponent {
 
   viewMode = 'map'
 
-  courses = [1,2,3];
+  courses = [
+    {id:1, name:'course1'},
+    {id:2, name:'course2'},
+    {id:3, name:'course3'},
+  ];
 
   post = {
     title: "Title",
