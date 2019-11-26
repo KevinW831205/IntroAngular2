@@ -52,11 +52,12 @@
     <div *ngSwitchDefault>Some View Content</div>
 </div> -->
 
+<button (click)="onAdd()">Add</button>
+
 <ul>
     <li *ngFor="let course of courses; index as i; even as isEven">
        {{i+1}} - {{course.name}} <span *ngIf="isEven">(Even)</span>
+       <button (click)="onRemove(course)">Remove</button>
     </li>
-
-
 </ul>
 
