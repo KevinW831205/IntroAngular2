@@ -12,7 +12,7 @@ import { FavoriteEventArgs } from './favorites/favorites.component';
 export class AppComponent {
   title = 'hello-world-Angular-Intro';
 
-  courses = [1,2,3]
+  courses = [1,2,3];
 
   post = {
     title: "Title",
@@ -26,9 +26,11 @@ export class AppComponent {
   }
 
   haveCourses(){
+    console.log( "course list", this.courses.length)
     if(this.courses.length >0){
       return true;
     }
+    console.log("return false")
     return false;
   }
 
