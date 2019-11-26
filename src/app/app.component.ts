@@ -14,11 +14,7 @@ export class AppComponent {
 
   viewMode = 'map'
 
-  courses = [
-    {id:1, name:'course1'},
-    {id:2, name:'course2'},
-    {id:3, name:'course3'},
-  ];
+  courses;
 
   post = {
     title: "Title",
@@ -56,5 +52,18 @@ export class AppComponent {
   onFavoriteChanged(eventArgs: FavoriteEventArgs){
     console.log("favorite changed: "+ eventArgs.newValue)
   }
+
+  loadCourses(){
+    this.courses = [
+      {id:1, name:'course1'},
+      {id:2, name:'course2'},
+      {id:3, name:'course3'},
+    ];
+  }
+
+  trackCourse(index, course){
+    return course ? course.id : undefined;
+  }
+
 
 }
