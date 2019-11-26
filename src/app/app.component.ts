@@ -49,6 +49,10 @@ export class AppComponent {
     this.courses.splice(index,1)
   }
 
+  onChange(course){
+    course.name = "UPDATED";
+  }
+
   onFavoriteChanged(eventArgs: FavoriteEventArgs){
     console.log("favorite changed: "+ eventArgs.newValue)
   }
