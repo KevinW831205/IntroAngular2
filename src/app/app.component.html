@@ -23,11 +23,12 @@
     [isLiked] = "tweet.isLiked"
 ></app-like-button> -->
 
-<div *ngIf="haveCourses(); else noCourses">
-    list of courses
+<div *ngIf="haveCourses(); then coursesList else noCourses">
 </div>
-<ng-template #noCourses >
+<ng-template #coursesList>
+    list of courses
+
+</ng-template>
+<ng-template #noCourses>
     no courses yet
 </ng-template>
-
-
