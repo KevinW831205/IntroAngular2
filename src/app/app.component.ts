@@ -12,6 +12,8 @@ import { FavoriteEventArgs } from './favorites/favorites.component';
 export class AppComponent {
   title = 'hello-world-Angular-Intro';
 
+  viewMode = 'map'
+
   courses = [1,2,3];
 
   post = {
