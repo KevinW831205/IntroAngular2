@@ -65,5 +65,7 @@ export class AppComponent {
     return course ? course.id : undefined;
   }
 
+  canSave = true;
+
 
 }
