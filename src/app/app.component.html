@@ -75,8 +75,11 @@
 ></span> -->
 
 <button
-    [style.backgroundColor] = "canSave ? 'blue' : 'gray'"
-    [style.color] = "canSave ? 'white':'black'"
-    [style.color] = "canSave ? 'bold' :'normal'"
+
+    [ngStyle] ="{
+        canSave ? 'blue' : 'gray',
+        canSave ? 'white':'black',
+        canSave ? 'bold' :'normal'
+    }"
 >Save</button>
 
