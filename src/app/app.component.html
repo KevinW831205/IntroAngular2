@@ -18,9 +18,16 @@
 
 </bootstrap-panel> -->
 
-<app-like-button
+<!-- <app-like-button
     [likesCount] = "tweet.likesCount"
     [isLiked] = "tweet.isLiked"
-></app-like-button>
+></app-like-button> -->
+
+<div *ngIf="haveCourses(); else noCourses">
+    list of courses
+</div>
+<ng-template #noCourses >
+    no courses yet
+</ng-template>
 
 

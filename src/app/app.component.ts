@@ -12,6 +12,8 @@ import { FavoriteEventArgs } from './favorites/favorites.component';
 export class AppComponent {
   title = 'hello-world-Angular-Intro';
 
+  courses = [1,2,3]
+
   post = {
     title: "Title",
     isFavorite: true
@@ -21,6 +23,13 @@ export class AppComponent {
     body: '',
     likesCount :10,
     isLiked: true
+  }
+
+  haveCourses(){
+    if(this.courses.length >0){
+      return true;
+    }
+    return false;
   }
 
   onFavoriteChanged(eventArgs: FavoriteEventArgs){
