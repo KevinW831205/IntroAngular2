@@ -2,7 +2,7 @@
 <!-- <courses></courses>
 <app-course></app-course> -->
 
-<app-favorites [is-fav] = "post.isFavorite" (change) =onFavoriteChanged($event) ></app-favorites>
+<!-- <app-favorites [is-fav] = "post.isFavorite" (change) =onFavoriteChanged($event) ></app-favorites>
 <button class="btn btn-primary">asdf</button>
 
 <app-input-title></app-input-title>
@@ -16,4 +16,11 @@
         <p>asdfkajdslfkjlskdjfslkajfdkl</p>
     </div>
 
-</bootstrap-panel>
+</bootstrap-panel> -->
+
+<app-like-button
+    [likesCount] = "tweet.likesCount"
+    [isLiked] = "tweet.isLiked"
+></app-like-button>
+
+

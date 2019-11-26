@@ -15,6 +15,7 @@ import { InputTitleComponent } from './input-title/input-title.component';
 import { TitleCasePipe } from './title-case.pipe';
 import { TestgroundComponent } from './testground/testground.component';
 import { PanelComponent } from './panel/panel.component';
+import { LikeButtonComponent } from './like-button/like-button.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PanelComponent } from './panel/panel.component';
     TitleCasePipe,
     TestgroundComponent,
     PanelComponent,
+    LikeButtonComponent,
   ],
   imports: [
     BrowserModule,
