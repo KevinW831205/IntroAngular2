@@ -67,5 +67,15 @@ export class AppComponent {
 
   canSave = true;
 
+  task = {
+    title: 'review applications',
+    // assignee:
+    // {
+    //   name: 'John Smith',
+    //   prop: 1
+    // }
+    assignee: null
+  }
+
 
 }

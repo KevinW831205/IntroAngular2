@@ -16,7 +16,7 @@ export class LikeButtonComponent implements OnInit {
 
   handleOnClick(){
     this.likesCount += (this.isLiked) ? -1 :1;
-    this.isLiked = !this.isLiked
+    this.isLiked = !this.isLiked;
   }
 
   constructor() { }
