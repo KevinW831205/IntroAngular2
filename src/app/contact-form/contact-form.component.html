@@ -12,7 +12,7 @@
                 <div *ngIf="firstName.errors.pattern">First name must have pattern banana</div>
             </div>
             <label>Last Name</label>
-            <input ngModel name="lastName" id="lastName" type="text" class="form-control" #lastName="ngModel"/>
+            <input ngModel name="lastName" id="lastName" type="text" class="form-control" #lastName="ngModel" />
         </div>
     </div>
 
@@ -22,5 +22,14 @@
             class="form-control"></textarea>
         <div class="alert alert-danger" *ngIf="comment.touched && !comment.valid">Comment cannot be empty</div>
     </div>
-    <button class="btn btn-primary" [disabled]="!f.valid" >submit</button>
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" ngModel name="isSubscribed"> Subscribe
+        </label>
+    </div>
+    <p>
+        {{f.value | json}}
+    </p>
+    <button class="btn btn-primary" [disabled]="!f.valid">submit</button>
 </form>
