@@ -16,6 +16,7 @@ import { TitleCasePipe } from './title-case.pipe';
 import { TestgroundComponent } from './testground/testground.component';
 import { PanelComponent } from './panel/panel.component';
 import { LikeButtonComponent } from './like-button/like-button.component';
+import { InputFormatDirective } from './input-format.directive';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LikeButtonComponent } from './like-button/like-button.component';
     TestgroundComponent,
     PanelComponent,
     LikeButtonComponent,
+    InputFormatDirective,
   ],
   imports: [
     BrowserModule,
