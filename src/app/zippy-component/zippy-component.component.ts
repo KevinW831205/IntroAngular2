@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-zippy-component',
@@ -7,16 +9,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ZippyComponentComponent implements OnInit {
 
+  faChevronUp = faChevronUp;
+  faChevronDown = faChevronDown;
 
   @Input('title') title: String;
-  isExpanded: boolean = true;
+  isExpanded: boolean;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onClick(){
+  toggle(){
     this.isExpanded = !this.isExpanded
   }
 
