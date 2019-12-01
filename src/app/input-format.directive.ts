@@ -5,7 +5,7 @@ import { Directive, HostListener, ElementRef, Input } from '@angular/core';
 })
 export class InputFormatDirective {
 
-  @Input('format') format;
+  @Input('appInputFormat') format;
 
   // @HostListener('focus')
   // onFocus() {
