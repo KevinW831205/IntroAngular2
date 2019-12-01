@@ -16,4 +16,8 @@ export class ZippyComponentComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClick(){
+    this.isExpanded = !this.isExpanded
+  }
+
 }
