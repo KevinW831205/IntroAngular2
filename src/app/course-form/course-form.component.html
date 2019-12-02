@@ -1,4 +1,15 @@
 <p>course-form works!</p>
 <form #f="ngForm" (ngSubmit)="submit(f)">
 
+    <div class="form-group">
+        <label for="courseName">Course Name</label>
+        <input required ngModel #courseName="ngModel" minlength="5" type="text" name="courseName" id="courseName"
+            class="form-control">
+
+        <label for="category">category</label>
+
+    </div>
+    <p>
+        {{f.value | json}}
+    </p>
 </form>
