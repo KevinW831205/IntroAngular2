@@ -1,4 +1,3 @@
-<p>course-form works!</p>
 <form #f="ngForm" (ngSubmit)="submit(f)">
 
     <div class="form-group">
@@ -10,24 +9,27 @@
             <div *ngIf="courseName.errors.minlength">Course name should be atleast
                 {{courseName.errors.minlength.requiredLength}} characters</div>
         </div>
+    </div>
+
+    <div class="form-group">
 
         <label for="category">Category</label>
-        <select required ngModel name="courseCategory" id="courseCategory" class="form-control"   
-         #courseCategory="ngModel" (change)="log(Category)"   
-        >
+        <select required ngModel name="courseCategory" id="courseCategory" class="form-control"
+            #courseCategory="ngModel">
             <option value=""></option>
             <option *ngFor="let category of categoryList" [value]="category.id">{{category.name}}</option>
         </select>
+    </div>
 
-        <div class="alert alert-danger" *ngIf="!courseCategory.valid && courseCategory.touched">
-            <div *ngIf="courseCategory.errors.required">Must Select a Category</div>
-        </div>
 
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" ngModel name="moneyBackGuarantee"> 30 day money back guarantee
-            </label>
-        </div>
+    <div class="alert alert-danger" *ngIf="!courseCategory.valid && courseCategory.touched">
+        <div *ngIf="courseCategory.errors.required">Must Select a Category</div>
+    </div>
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" ngModel name="moneyBackGuarantee"> 30 day money back guarantee
+        </label>
     </div>
     <p>
         {{f.value | json}}

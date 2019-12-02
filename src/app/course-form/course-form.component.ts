@@ -13,10 +13,6 @@ export class CourseFormComponent implements OnInit {
     {id:3, name:"other"}
   ]
 
-  log(x){
-    console.log(x)
-  }
-
 
 
   constructor() { }

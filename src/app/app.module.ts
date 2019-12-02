@@ -20,10 +20,12 @@ import { InputFormatDirective } from './input-format.directive';
 import { ZippyComponentComponent } from './zippy-component/zippy-component.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { CourseFormComponent } from './course-form/course-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SignupFormComponent,
     CoursesComponent,
     CourseComponent,
     SummaryPipe,
