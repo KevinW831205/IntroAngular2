@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseFormComponent implements OnInit {
 
+  categoryList = [
+    {id:1, name:"tech"},
+    {id:2, name:"application"},
+    {id:3, name:"other"}
+  ]
+
+
+
   constructor() { }
 
   ngOnInit() {
