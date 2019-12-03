@@ -6,8 +6,10 @@ export class PasswordValidator{
         return null;
     }
 
-    static notTheSamePassword(control: AbstractControl): ValidationErrors | null{
-
+    static notTheSamePassword(control: AbstractControl, expected: String): ValidationErrors | null{
+        if(control.value === expected){
+            return {notTheSamePassword: true}
+        }
         return null;
     }
     
