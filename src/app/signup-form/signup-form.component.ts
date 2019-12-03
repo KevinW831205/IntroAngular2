@@ -14,13 +14,26 @@ export class SignupFormComponent {
       Validators.required,
       Validators.minLength(3),
       UsernameValidators.cannotContainSpace,
-    ], 
-    UsernameValidators.shouldBeUnique
+    ],
+      UsernameValidators.shouldBeUnique
     ),
     "password": new FormControl('', Validators.required)
   });
 
   get username() {
     return this.form.get('username')
+  }
+
+  login() {
+    // let isValid = authService.login(this.form.value);
+    // if (!isValid) {
+    //   this.form.setErrors({
+    //     invalidLogin: true
+    //   })
+    // }
+
+    this.form.setErrors({
+      invalidLogin: true
+    })
   }
 }
