@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormArray, FormControl, FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-password-change-form',
@@ -6,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./password-change-form.component.css']
 })
 export class PasswordChangeFormComponent implements OnInit {
+  form;
 
-  constructor() { }
 
+  constructor(fb: FormBuilder) {
+    this.form = fb.group({
+      oldPassword:[],
+      newPassword:[],
+      confirmPassword:[]
+    });
+  }
   ngOnInit() {
   }
 
