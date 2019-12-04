@@ -15,7 +15,7 @@ export class PostComponentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get(this.url)
+    this.service.getPost()
       .subscribe(response => {
         this.posts = response;
       })
