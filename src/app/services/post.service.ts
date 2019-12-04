@@ -16,7 +16,7 @@ export class PostService {
   }
 
   createPost(post) {
-    return this.http.put(this.url, JSON.stringify(post))
+    return this.http.post(this.url, JSON.stringify(post))
   }
 
   updatePost(val, targetid) {
