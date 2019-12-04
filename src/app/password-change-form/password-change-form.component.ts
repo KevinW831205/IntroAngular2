@@ -8,17 +8,22 @@ import { FormGroup, FormArray, FormControl, FormBuilder, Validators } from '@ang
   styleUrls: ['./password-change-form.component.css']
 })
 export class PasswordChangeFormComponent implements OnInit {
-  form;
+  form: FormGroup;
 
 
   constructor(fb: FormBuilder) {
     this.form = fb.group({
-      oldPassword:[],
-      newPassword:[],
-      confirmPassword:[]
+      oldPassword:['',Validators.required],
+      newPassword:['',Validators.required],
+      confirmPassword:['',Validators.required]
     });
   }
+
   ngOnInit() {
+  }
+
+  changePassword(){
+    console.log("1")
   }
 
 }
