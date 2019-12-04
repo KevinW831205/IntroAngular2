@@ -11,20 +11,20 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
-  getPost(){
+  getPost() {
     return this.http.get(this.url);
   }
 
-  createPost(post){
-    return this.http.put(this.url,post)
+  createPost(post) {
+    return this.http.put(this.url, JSON.stringify(post))
   }
 
-  updatePost(val, targetid){
-    return this.http.patch(this.url+"/"+targetid,val)
+  updatePost(val, targetid) {
+    return this.http.patch(this.url + "/" + targetid, JSON.stringify(val))
   }
 
-  deletePost(targetid){
-    return this.http.delete(this.url+"/"+targetid)
+  deletePost(targetid) {
+    return this.http.delete(this.url + "/" + targetid)
   }
 
 }
