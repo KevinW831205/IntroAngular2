@@ -14,4 +14,17 @@ export class PostService {
   getPost(){
     return this.http.get(this.url);
   }
+
+  createPost(post){
+    return this.http.put(this.url,post)
+  }
+
+  updatePost(val, targetid){
+    return this.http.patch(this.url+"/"+targetid,val)
+  }
+
+  deletePost(targetid){
+    return this.http.delete(this.url+"/"+targetid)
+  }
+
 }

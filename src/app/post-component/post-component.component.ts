@@ -19,13 +19,12 @@ export class PostComponentComponent implements OnInit {
       .subscribe(response => {
         this.posts = response;
       })
-
   }
 
   createPost(inputTitle: HTMLInputElement) {
     let post = { title: inputTitle.value }
     inputTitle.value = '';
-    this.http.post(this.url, JSON.stringify(post))
+    this.service.createPost(post)
       .subscribe(response => {
         post['id'] = response['id'];
         this.posts.splice(0, 0, post);
@@ -35,7 +34,7 @@ export class PostComponentComponent implements OnInit {
   updatePost(post) {
     // this.http.put(this.url+"/"+post.id,post)
     console.log(post)
-    this.http.patch(this.url + "/" + post.id, JSON.stringify({ isRead: true }))
+    this.service.updatePost(post, post.id)
       .subscribe(response => {
         console.log(response)
       })
@@ -43,7 +42,7 @@ export class PostComponentComponent implements OnInit {
 
   deletePost(post) {
     console.log(post)
-    this.http.delete(this.url + '/' + post.id)
+    this.service.deletePost(post.id)
       .subscribe(response => {
         let index = this.posts.indexOf(post);
         this.posts.splice(index, 1)
