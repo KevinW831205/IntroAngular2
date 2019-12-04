@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class PostComponentComponent implements OnInit {
 
   posts;
-  constructor(http: HttpClient) {
+  constructor(private http: HttpClient) {
     http.get("http://jsonplaceholder.typicode.com/posts")
       .subscribe(response => {
         this.posts = response;
@@ -19,6 +19,10 @@ export class PostComponentComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  createPost(title: HTMLInputElement){
+    this.http.post()
   }
 
 }
