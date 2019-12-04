@@ -33,7 +33,13 @@ export class PostComponentComponent implements OnInit {
   }
 
   updatePost(post){
-    // this.http.patch(this.url, JSON.stringify({key: value}))
+    // this.http.put(this.url+"/"+post.id,post)
+    console.log(1)
+    this.http.patch(this.url+"/"+post.id, JSON.stringify({isRead : true}))
+      .subscribe(response =>{
+        console.log(response)
+      })
+
   }
 
 }
