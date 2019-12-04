@@ -9,17 +9,17 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class PostComponentComponent implements OnInit {
-
   posts;
   private url = "http://jsonplaceholder.typicode.com/posts";
   constructor(private http: HttpClient) {
-    http.get(this.url)
-      .subscribe(response => {
-        this.posts = response;
-      })
   }
 
   ngOnInit() {
+    this.http.get(this.url)
+      .subscribe(response => {
+        this.posts = response;
+      })
+
   }
 
   createPost(inputTitle: HTMLInputElement) {
