@@ -22,6 +22,18 @@ export class PasswordChangeFormComponent implements OnInit {
   ngOnInit() {
   }
 
+  get oldPassword(){
+    return this.form.get('oldPassword')
+  }
+
+  get newPassword(){
+    return this.form.get('newPassword')
+  }
+
+  get confirmPassword(){
+    return this.form.get('confirmPassword')
+  }
+
   changePassword(){
     console.log("1")
   }
