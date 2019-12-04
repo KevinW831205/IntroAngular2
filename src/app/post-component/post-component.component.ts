@@ -10,13 +10,12 @@ import { HttpClient } from '@angular/common/http';
 
 export class PostComponentComponent implements OnInit {
 
+  posts;
   constructor(http: HttpClient) {
     http.get("http://jsonplaceholder.typicode.com/posts")
       .subscribe(response => {
-        console.log(response)
-
+        this.posts = response;
       })
-
   }
 
   ngOnInit() {
