@@ -11,8 +11,9 @@ import { HttpClient } from '@angular/common/http';
 export class PostComponentComponent implements OnInit {
 
   posts;
+  private url = "http://jsonplaceholder.typicode.com/posts";
   constructor(private http: HttpClient) {
-    http.get("http://jsonplaceholder.typicode.com/posts")
+    http.get(this.url)
       .subscribe(response => {
         this.posts = response;
       })
@@ -21,8 +22,18 @@ export class PostComponentComponent implements OnInit {
   ngOnInit() {
   }
 
-  createPost(title: HTMLInputElement){
-    this.http.post()
+  createPost(inputTitle: HTMLInputElement) {
+    let post = { title: inputTitle.value }
+    inputTitle.value = '';
+    this.http.post(this.url, JSON.stringify(post))
+      .subscribe(response => {
+        post['id'] = response['id'];
+        this.posts.splice(0,0, post);
+      })
+  }
+
+  updatePost(post){
+    // this.http.patch(this.url, JSON.stringify({key: value}))
   }
 
 }
