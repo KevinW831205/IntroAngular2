@@ -1,6 +1,7 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-post-component',
@@ -10,8 +11,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class PostComponentComponent implements OnInit {
   posts;
-  private url = "http://jsonplaceholder.typicode.com/posts";
-  constructor(private http: HttpClient) {
+  constructor(private service: PostService) {
   }
 
   ngOnInit() {
