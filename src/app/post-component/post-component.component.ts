@@ -2,6 +2,8 @@ import { Component, OnInit, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { PostService } from '../services/post.service';
+import { AppError } from '../common/app-error';
+import { NotFoundError } from '../common/not-found-error';
 
 @Component({
   selector: 'app-post-component',
@@ -20,9 +22,13 @@ export class PostComponentComponent implements OnInit {
         response => {
           this.posts = response;
         },
-        error => {
-          alert("An unexpected error occured");
-          console.log(error);
+        (error: AppError) => {
+          if(error instanceof NotFoundError){
+            alert('This post has already been deleted.')
+          } else {
+            alert("An unexpected error occured");
+            console.log(error);
+          }
         })
   }
 
@@ -35,13 +41,12 @@ export class PostComponentComponent implements OnInit {
           post['id'] = response['id'];
           this.posts.splice(0, 0, post);
         },
-        (error:Response) => {
-          if(error.status === 400){
-            console.log(error)
-            //  this.form.setErrors(error.json())
+        (error: AppError) => {
+          if(error instanceof NotFoundError){
+            alert('This post has already been deleted.')
           } else {
             alert("An unexpected error occured");
-            console.log(error);  
+            console.log(error);
           }
         })
   }
@@ -54,9 +59,13 @@ export class PostComponentComponent implements OnInit {
         response => {
           console.log(response)
         },
-        error => {
-          alert("An unexpected error occured");
-          console.log(error);
+        (error: AppError) => {
+          if(error instanceof NotFoundError){
+            alert('This post has already been deleted.')
+          } else {
+            alert("An unexpected error occured");
+            console.log(error);
+          }
         })
   }
 
@@ -68,8 +77,8 @@ export class PostComponentComponent implements OnInit {
           let index = this.posts.indexOf(post);
           this.posts.splice(index, 1)
         },
-        (error: Response) => {
-          if(error.status === 404){
+        (error: AppError) => {
+          if(error instanceof NotFoundError){
             alert('This post has already been deleted.')
           } else {
             alert("An unexpected error occured");
