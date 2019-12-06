@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { PostService } from '../services/post.service';
 import { AppError } from '../common/app-error';
 import { NotFoundError } from '../common/not-found-error';
+import { BadInput } from '../common/bad-input';
 
 @Component({
   selector: 'app-post-component',
@@ -42,8 +43,9 @@ export class PostComponentComponent implements OnInit {
           this.posts.splice(0, 0, post);
         },
         (error: AppError) => {
-          if(error instanceof NotFoundError){
-            alert('This post has already been deleted.')
+          if(error instanceof BadInput){
+            console.log("bad input")
+            // this.form.setErrors(error.originalError)
           } else {
             alert("An unexpected error occured");
             console.log(error);
