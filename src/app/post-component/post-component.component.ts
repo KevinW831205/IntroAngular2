@@ -5,6 +5,7 @@ import { PostService } from '../services/post.service';
 import { AppError } from '../common/app-error';
 import { NotFoundError } from '../common/not-found-error';
 import { BadInput } from '../common/bad-input';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-post-component',
@@ -22,14 +23,6 @@ export class PostComponentComponent implements OnInit {
       .subscribe(
         response => {
           this.posts = response;
-        },
-        (error: AppError) => {
-          if(error instanceof NotFoundError){
-            alert('This post has already been deleted.')
-          } else {
-            alert("An unexpected error occured");
-            console.log(error);
-          }
         })
   }
 
@@ -47,8 +40,7 @@ export class PostComponentComponent implements OnInit {
             console.log("bad input")
             // this.form.setErrors(error.originalError)
           } else {
-            alert("An unexpected error occured");
-            console.log(error);
+            throw error;
           }
         })
   }
@@ -60,14 +52,6 @@ export class PostComponentComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response)
-        },
-        (error: AppError) => {
-          if(error instanceof NotFoundError){
-            alert('This post has already been deleted.')
-          } else {
-            alert("An unexpected error occured");
-            console.log(error);
-          }
         })
   }
 
@@ -83,8 +67,7 @@ export class PostComponentComponent implements OnInit {
           if(error instanceof NotFoundError){
             alert('This post has already been deleted.')
           } else {
-            alert("An unexpected error occured");
-            console.log(error);
+            throw error;
           }
         });
   }
