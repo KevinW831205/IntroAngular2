@@ -16,6 +16,10 @@ export class DataService {
     
     }
 
+    // error test 
+    // return Observable.throw(new AppError())
+
+
     getAll() {
         return this.http.get(this.url)
         .catch(this.hanldeError);
