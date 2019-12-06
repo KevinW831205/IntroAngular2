@@ -12,7 +12,7 @@ import { BadInput } from '../common/bad-input';
 export class DataService {
 
 
-    constructor(private http: HttpClient, private url: String) {
+    constructor(private http: HttpClient, private url) {
     
     }
 
@@ -31,7 +31,7 @@ export class DataService {
             .catch(this.hanldeError)
     }
 
-    deletePost(id) {
+    delete(id) {
         return this.http.delete(this.url + "/" + id)
             .catch(this.hanldeError);
     }
