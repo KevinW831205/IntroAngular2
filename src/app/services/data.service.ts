@@ -18,7 +18,7 @@ export class DataService {
 
     getAll() {
         return this.http.get(this.url)
-            .catch(this.hanldeError);
+        .catch(this.hanldeError);
     }
 
     create(resource) {
