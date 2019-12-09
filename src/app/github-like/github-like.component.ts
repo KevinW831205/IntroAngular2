@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GithubLikeService } from '../services/github-like.service';
 
 @Component({
   selector: 'app-github-like',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GithubLikeComponent implements OnInit {
 
-  constructor() { }
+  followers: any;
+
+  constructor(private service : GithubLikeService) { }
 
   ngOnInit() {
+    this.service.getAll()
+      .subscribe(followers => this.followers = followers);
   }
 
 }
