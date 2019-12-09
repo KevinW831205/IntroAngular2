@@ -32,6 +32,9 @@ import { AppError } from './common/app-error';
 import { GithubLikeComponent } from './github-like/github-like.component';
 import { GithubLikeService } from './services/github-like.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponentComponent } from './home-component/home-component.component';
+import { GithubProfileComponent } from './github-profile/github-profile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     PostComponentComponent,
     GithubLikeComponent,
     NavbarComponent,
+    HomeComponentComponent,
+    GithubProfileComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +69,12 @@ import { NavbarComponent } from './navbar/navbar.component';
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot()
+    RouterModule.forRoot([
+      { path:'', component: HomeComponentComponent},
+      { path:'followers', component: GithubLikeComponent},
+      { path:'profile/:username', component: GitHubProfileComponent}
+
+  ])
   ],
   providers: [
     CoursesService,
