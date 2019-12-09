@@ -28,6 +28,7 @@ import { PostComponentComponent } from './post-component/post-component.componen
 import { PostService } from './services/post.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { AppError } from './common/app-error';
+import { GithubLikeComponent } from './github-like/github-like.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { AppError } from './common/app-error';
     NewCourseFormComponent,
     PasswordChangeFormComponent,
     PostComponentComponent,
+    GithubLikeComponent,
   ],
   imports: [
     BrowserModule,

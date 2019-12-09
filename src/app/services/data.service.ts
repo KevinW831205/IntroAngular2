@@ -11,9 +11,8 @@ import { BadInput } from '../common/bad-input';
 })
 export class DataService {
 
-
     constructor(private http: HttpClient, private url) {
-    
+
     }
 
     // error test 
@@ -22,26 +21,32 @@ export class DataService {
 
     getAll() {
         return this.http.get(this.url)
-        .catch(this.hanldeError);
+            .catch(this.handleError);
     }
+
+    get(id) {
+        return this.http.get(this.url + '/' + id)
+            .catch(this.handleError);
+    }
+
 
     create(resource) {
         return this.http.post(this.url, JSON.stringify(resource))
-            .catch(this.hanldeError)
+            .catch(this.handleError)
     }
 
     update(resource) {
         return this.http.patch(this.url + "/" + resource.id, JSON.stringify(resource))
-            .catch(this.hanldeError)
+            .catch(this.handleError)
     }
 
     delete(id) {
         return this.http.delete(this.url + "/" + id)
-            .catch(this.hanldeError);
+            .catch(this.handleError);
     }
 
 
-    private hanldeError(error: Response) {
+    private handleError(error: Response) {
         if (error.status === 400) {
             return Observable.throw(new BadInput(error.json()));
         }
