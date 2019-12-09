@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
+import { RouterModule } from "@angular/router";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +31,7 @@ import { AppErrorHandler } from './common/app-error-handler';
 import { AppError } from './common/app-error';
 import { GithubLikeComponent } from './github-like/github-like.component';
 import { GithubLikeService } from './services/github-like.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { GithubLikeService } from './services/github-like.service';
     PasswordChangeFormComponent,
     PostComponentComponent,
     GithubLikeComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +63,7 @@ import { GithubLikeService } from './services/github-like.service';
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule.forRoot()
   ],
   providers: [
     CoursesService,
