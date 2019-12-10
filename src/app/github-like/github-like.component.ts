@@ -3,6 +3,7 @@ import { GithubLikeService } from '../services/github-like.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/observable';
 import { combineLatest } from 'rxjs';
+import {switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-github-like',
@@ -36,16 +37,22 @@ export class GithubLikeComponent implements OnInit {
       this.route.paramMap,
       this.route.queryParamMap
     ])
-
-    obs.subscribe(params => {
-      console.log(params)
+    .switchMap(params => {
       let id = params[0].get('id');
       let page = params[1].get('page');
-      console.log(page);
+      return this.service.getAll();
     })
+    .subscribe(followers => this.followers = followers);
 
-    this.service.getAll()
-      .subscribe(followers => this.followers = followers);
+    // obs.subscribe(params => {
+    //   console.log(params)
+    //   let id = params[0].get('id');
+    //   let page = params[1].get('page');
+    //   console.log(page);
+
+    //   this.service.getAll()
+    //   .subscribe(followers => this.followers = followers);
+    // })
   }
 
 }
