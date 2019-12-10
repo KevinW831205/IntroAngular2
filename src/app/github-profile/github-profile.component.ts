@@ -19,6 +19,7 @@ export class GithubProfileComponent implements OnInit {
         console.log(id)
         //service .get(id);
       })
+
   }
 
 }
