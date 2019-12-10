@@ -8,17 +8,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GithubProfileComponent implements OnInit {
 
+
   constructor(private route: ActivatedRoute) {
 
    }
 
   ngOnInit() {
-    this.route.paramMap
-      .subscribe(params => {
-        let id = params.get('userid');
-        console.log(id)
-        //service .get(id);
-      })
+    let id = this.route.snapshot.paramMap.get('userid');
+    console.log(id)
+
+    // this.route.paramMap
+    //   .subscribe(params => {
+    //     let id = params.get('userid');
+    //     console.log(id)
+    //     //service .get(id);
+    //   })
 
   }
 
