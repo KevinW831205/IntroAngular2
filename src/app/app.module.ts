@@ -60,7 +60,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NavbarComponent,
     HomeComponentComponent,
     GithubProfileComponent,
-    NotFoundComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -71,8 +71,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HttpClientModule,
     RouterModule.forRoot([
       { path:'', component: HomeComponentComponent},
+      { path:'followers/:username', component: GithubProfileComponent},
       { path:'followers', component: GithubLikeComponent},
-      { path:'profile/:username', component: GitHubProfileComponent}
+      { path:'posts', component: PostComponentComponent},
+      { path:'**', component: NotFoundComponent},
 
   ])
   ],
