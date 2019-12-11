@@ -35,6 +35,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { GithubProfileComponent } from './github-profile/github-profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ArchiveNavComponent } from './archive-nav/archive-nav.component';
+import { ArchivePageComponent } from './archive-page/archive-page.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NavbarComponent,
     HomeComponentComponent,
     GithubProfileComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ArchiveNavComponent,
+    ArchivePageComponent
   ],
   imports: [
     BrowserModule,
