@@ -74,12 +74,15 @@ import { ArchivePageComponent } from './archive-page/archive-page.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path:'', component: HomeComponentComponent},
-      { path:'followers/:userid/:username', component: GithubProfileComponent},
-      { path:'followers', component: GithubLikeComponent},
-      { path:'posts', component: PostComponentComponent},
-      { path:'**', component: NotFoundComponent},
+      // { path:'', component: HomeComponentComponent},
+      // { path:'followers/:userid/:username', component: GithubProfileComponent},
+      // { path:'followers', component: GithubLikeComponent},
+      // { path:'posts', component: PostComponentComponent},
+      {path:'',component: ArchiveNavComponent},
+      {path:'archive/:year/:month', component: ArchivePageComponent},
 
+
+      { path:'**', component: NotFoundComponent},
   ])
   ],
   providers: [
