@@ -20,31 +20,46 @@ export class DataService {
 
 
     getAll() {
-        return this.http.get(this.url)
-            .catch(this.handleError);
+        try {
+            return this.http.get(this.url);
+        } catch (error) {
+            this.handleError(error);
+        }
     }
 
     get(id) {
-        return this.http.get(this.url + '/' + id)
-            .catch(this.handleError);
+        try {
+            return this.http.get(this.url + '/' + id);
+        } catch (error) {
+            this.handleError(error);
+        }
     }
 
 
     create(resource) {
-        return this.http.post(this.url, JSON.stringify(resource))
-            .catch(this.handleError)
+        try {
+            return this.http.post(this.url, JSON.stringify(resource));
+        } catch (error) {
+            this.handleError(error);
+        }
     }
 
     update(resource) {
-        return this.http.patch(this.url + "/" + resource.id, JSON.stringify(resource))
-            .catch(this.handleError)
+        try {
+            this.http.patch(this.url + "/" + resource.id, JSON.stringify(resource));
+        } catch (error) {
+            this.handleError(error);
+        }
     }
 
     delete(id) {
-        return this.http.delete(this.url + "/" + id)
-            .catch(this.handleError);
-    }
+        try {
+            return this.http.delete(this.url + "/" + id);
+        } catch (error) {
+            this.handleError(error);
+        }
 
+    }
 
     private handleError(error: Response) {
         if (error.status === 400) {
