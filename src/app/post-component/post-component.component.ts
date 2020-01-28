@@ -49,15 +49,15 @@ export class PostComponentComponent implements OnInit {
         })
   }
 
-  update(post) {
-    // this.http.put(this.url+"/"+post.id,post)
-    console.log(post)
-    this.service.update(post)
-      .subscribe(
-        response => {
-          console.log(response)
-        })
-  }
+  // update(post) {
+  //   // this.http.put(this.url+"/"+post.id,post)
+  //   console.log(post)
+  //   this.service.update(post)
+  //     .subscribe(
+  //       response => {
+  //         console.log(response)
+  //       })
+  // }
 
   deletePost(post) {
     let index = this.posts.indexOf(post);
